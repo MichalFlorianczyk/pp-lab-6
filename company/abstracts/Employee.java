@@ -6,8 +6,8 @@ public abstract class Employee implements Employable {
     private String name;
     private double salary;
     private int id;
-    private String hireDate;
-    private String position;
+    private String hireDate; // Nowe pole
+    private String position; // Nowe pole
 
     public Employee(String name, double salary, int id, String hireDate, String position) {
         this.name = name;
