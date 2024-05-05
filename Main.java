@@ -1,15 +1,22 @@
+import company.abstracts.Employee;
 import company.models.Manager;
 import company.models.Worker;
+import java.util.ArrayList;
 
 public class Main {
     public static void main(String[] args) {
-        Manager manager = new Manager("Alice", 50000.0, 1);
-        Worker worker = new Worker("Bob", 30000.0, 2);
+        ArrayList<Employee> employees = new ArrayList<>();
 
-        System.out.println(manager.getName() + " earns " + manager.getSalary());
-        System.out.println(worker.getName() + " earns " + worker.getSalary());
+        Manager manager = new Manager("Alice", 50000.0, 1, "2022-01-01", "Manager");
+        Worker worker = new Worker("Bob", 30000.0, 2, "2022-01-15", "Worker");
 
-        manager.work();
-        worker.work();
+        employees.add(manager);
+        employees.add(worker);
+
+        for (Employee emp : employees) {
+            System.out.println(emp.getName() + " (ID: " + emp.getId() + "), Position: " + emp.getPosition() +
+                    ", Hire date: " + emp.getHireDate() + ", Salary: " + emp.getSalary());
+            emp.work();
+        }
     }
 }
